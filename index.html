@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+    src="https://kit.fontawesome.com/af2da30c34.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="borderline">
+      <div class="container">
+        <div class="row">
+            <div class="col-12">
+              <div class="searchBar">
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2 enteracity">
+            <input
+              type="text"
+              class="form-control"
+              id="inputacity"
+              placeholder="enter a city"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mb-2 submitbutton">
+              🔍
+          </button>
+        </form>
+        <button id="currentlocation">　Current　</button>
+        </div></div></div>
+        <div class="row">
+          <div class="col-5 main_city">
+            <span class="cityname">Tokyo, Japan</span>
+            <div class="col-5 dow_time cityDate">Monday</div>
+            <div class="col-5 dow_time cityTime">13:30</div>
+          </div>
+
+          <div class="col-2 main_weather">
+              <div class="weather">🌤</div>
+              <div class="temparature"><span id="mainTemp"><b>32</b></span> <span class="tempC">℃</span> | <span class="tempF">°F</span></div>
+          </div>
+          <div class="col-2 high_low_precipitaion">
+             <div class="highest_temp"><span class="red">↑</span> : 33℃</div>
+              <div class="lowest_temp"><span class="blue">↓</span>  : 24℃</div>
+              <div class="precipitation">☔️ : 15%</div>
+          </div>
+
+        
+        </div>
+
+        <section class="weeklyweather">
+          <div class="row">
+            <div class="col-2 weeklyweather_frame">
+              Tue
+              <div class="row">
+              
+                <div class="col-6 weeklydetails symbol">⛅️</div>
+                <div class="col-6 weeklydetails"><small>35℃<br />28℃</small></div>
+              </div>
+            </div>
+
+            <div class="col-2 weeklyweather_frame">
+              Wed
+              <div class="row">
+                <div class="col-6 weeklydetails symbol">☔️</div>
+                <div class="col-6 weeklydetails"><small>28℃<br />20℃</small></div>
+              </div>
+            </div>
+
+            <div class="col-2 weeklyweather_frame">
+              Thu
+              <div class="row">
+                <div class="col-6 weeklydetails symbol">☁️</div>
+                <div class="col-6 weeklydetails"><small>26℃<br />18℃</small></div>
+              </div>
+            </div>
+
+            <div class="col-2 weeklyweather_frame">
+              Fri
+              <div class="row">
+                <div class="col-6 weeklydetails symbol">🌤</div>
+                <div class="col-6 weeklydetails"><small>31℃<br />29℃</small></div>
+              </div>
+            </div>
+
+            <div class="col-2 weeklyweather_frame">
+              Sat
+              <div class="row">
+                <div class="col-6 weeklydetails symbol">⚡️️
+               </div>
+                <div class="col-6 weeklydetails"><small>22℃<br />17℃</small></div>
+              </div>
+            </div>
+
+            <div class="col-2 weeklyweather_frame">
+              Sun
+              <div class="row">
+                <div class="col-6 weeklydetails symbol">🌨</div>
+                <div class="col-6 weeklydetails"><small>20℃<br />12℃</small></div>
+              </div>
+            </div>
+          </span>
+        </div>  
+        
+        <div class="row bigCities">
+            <ul>
+              
+            <li class="list1">
+              <a href="https://onl.sc/zQz62dT" target="_blank">Tokyo</a>
+            </li>
+          
+            <li class="list2">
+              <a href="https://onl.sc/719FB4C" target="_blank">Singapore</a>
+            </li>
+          
+            <li class="list4">
+              <a href="https://onl.sc/fP4LzjZ" target="_blank">New York</a>
+            </li>
+          
+            <li class="list5">
+              <a href="https://onl.sc/rXe8hK9" target="_blank">Paris</a>
+            </li>
+            
+            <li class="list6">
+              <a href="https://onl.sc/ZndibPC" target="_blank">London</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

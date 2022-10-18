@@ -1,0 +1,118 @@
+body {
+  background-image: url("image/bluesky.jpg");
+}
+ul {
+  display: flex;
+  list-style: none;
+  margin: 30px auto 30px 0px;
+  padding-left: 0px;
+}
+li {
+  list-style: none;
+  margin-right: 20px;
+}
+.submitbutton {
+  background-color: orange;
+  border: orange;
+}
+.mx-sm-3 {
+  margin-right: 0px !important;
+}
+.form-inline {
+  margin-top: 10px;
+}
+.searchBar {
+  display: flex;
+  flex-direction: row;
+}
+#currentlocation {
+  background-color: #24a9e2;
+  border: #24a9e2;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  height: 37px;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+#currentlocation：hover {
+  display: block;
+  background-color: blue;
+  color: black;
+}
+.borderline {
+  top: 20px;
+  width: 700px;
+  margin: auto;
+  border: solid 3px #bbe4e9;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.main_city {
+  padding-left: 30px;
+  padding-right: 0px;
+  color: #545b63;
+}
+.cityname {
+  font-size: 30px;
+}
+.weather {
+  font-size: 40px;
+  vertical-align: top;
+}
+.main_weather {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #545b63;
+}
+.high_low_precipitaion {
+  color: #545b63;
+  top: 15px;
+}
+.temparature {
+  font-size: 15px;
+  vertical-align: middle;
+}
+.weeklyweather {
+  margin: 30px;
+}
+.weeklydetails {
+  padding: 0px;
+}
+.weather_emoji {
+  font-size: 50px;
+}
+.weeklyweather_frame {
+  color: #545b63;
+  padding: 0.5em 2em;
+  margin: 0em 0;
+  font-weight: bold;
+  background: #fff;
+  border: solid 1px #bbe4e9;
+  border-radius: 10px;
+}
+.symbol {
+  font-size: 25px;
+}
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.dow_time {
+  padding: 0px;
+}
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+.world_city_list {
+  display: block;
+}
+.bigCities {
+  text-align: left;
+}
+.mystyle {
+  font-weight: 800;
+}
