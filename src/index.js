@@ -67,35 +67,43 @@ updateDate();
 // tempC.addEventListener("mousedown", mouseDownC);
 
 // display city Name
-function insertCityName(event) {
-  event.preventDefault();
-  let cityName = document.getElementById("inputacity");
-  let tempElement = document.querySelector(".cityname");
-  tempElement.innerHTML = cityName.value;
-}
+// function insertCityName(event) {
+//   event.preventDefault();
+//   let cityName = document.getElementById("inputacity");
+//   let tempElement = document.querySelector(".cityname");
 
-let cityName = document.querySelector("button");
-cityName.addEventListener("click", insertCityName);
+//   // tempElement.innerHTML = cityName.value;
+// }
 
-// update Temp
-function getCityTemp() {
-  let cityName2 = document.getElementById("inputacity").value;
-  // let cityName3 = cityName2.toLowerCase().trim();
-  let apiKey = "10bffd0ee69586cf4e1b1e702883c72c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName2}&units=metric&appid=10bffd0ee69586cf4e1b1e702883c72c`;
+// let cityName = document.querySelector("button");
+// cityName.addEventListener("click", insertCityName);
 
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(updateCityTemp);
-}
-
-function updateCityTemp(response) {
+// update searched City data
+function updateCityElement(response) {
   let tempRound = Math.round(response.data.main.temp);
   let tempElement = document.getElementById("mainTemp");
   tempElement.innerHTML = `${tempRound}`;
+  document.querySelector(".cityname").innerHTML = response.data.name;
 }
 
-cityName.addEventListener("click", getCityTemp);
+//show searched City name
+function searchCity(city) {
+  let apiKey = "10bffd0ee69586cf4e1b1e702883c72c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=10bffd0ee69586cf4e1b1e702883c72c&units=metric`;
+  console.log(city);
+  axios.get(apiUrl).then(updateCityElement);
+}
 
-// current button
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.getElementById("inputacity").value;
+  searchCity(city);
+}
+
+let cityName = document.querySelector(".form-inline");
+cityName.addEventListener("submit", handleSubmit);
+
+// current place
 function showCurrentTempPlace(response) {
   let cityName = document.querySelector(".cityname");
   let currentCityName = response.data.name;
