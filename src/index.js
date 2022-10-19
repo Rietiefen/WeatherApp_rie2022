@@ -86,18 +86,12 @@ function updateCityElement(response) {
   document.querySelector(".cityname").innerHTML = response.data.name;
 }
 
-//show searched City name
-function searchCity(city) {
-  let apiKey = "10bffd0ee69586cf4e1b1e702883c72c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=10bffd0ee69586cf4e1b1e702883c72c&units=metric`;
-  console.log(city);
-  axios.get(apiUrl).then(updateCityElement);
-}
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.getElementById("inputacity").value;
-  searchCity(city);
+  let apiKey = "10bffd0ee69586cf4e1b1e702883c72c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=10bffd0ee69586cf4e1b1e702883c72c&units=metric`;
+  axios.get(apiUrl).then(updateCityElement);
 }
 
 let cityName = document.querySelector(".form-inline");
