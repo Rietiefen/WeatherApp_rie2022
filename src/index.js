@@ -83,6 +83,12 @@ function updateCityElement(response) {
   let tempRound = Math.round(response.data.main.temp);
   let tempElement = document.getElementById("mainTemp");
   tempElement.innerHTML = `${tempRound}`;
+  let wind = document.querySelector(".wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let tempMax = document.querySelector(".highest_temp");
+  tempMax.innerHTML = Math.round(response.data.main.temp_max);
+  let tempMin = document.querySelector(".lowest_temp");
+  tempMin.innerHTML = Math.round(response.data.main.temp_min);
   document.querySelector(".cityname").innerHTML = response.data.name;
 }
 
@@ -106,6 +112,7 @@ function showCurrentTempPlace(response) {
   let mainTemp = document.getElementById("mainTemp");
   let currentTemp = Math.round(response.data.main.temp);
   mainTemp.innerHTML = currentTemp;
+  console.log(response);
 }
 
 function getCurrentPlace(position) {
