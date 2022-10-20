@@ -41,18 +41,18 @@ function updateTempF(event) {
   mainTemp.innerHTML = Math.round(mainTempF);
 }
 
+function updateTempC(event) {
+  event.preventDefault();
+
+  let mainTemp = document.querySelector("#mainTemp");
+  mainTemp.innerHTML = Math.round(celsiusTemp);
+}
+
 let mainTempF = document.querySelector(".tempF");
 mainTempF.addEventListener("click", updateTempF);
 
-// function updateTempC(event) {
-//   event.preventDefault();
-
-//   let mainTemp = document.querySelector("#mainTemp");
-//   mainTemp.innerHTML = celsiusTemp;
-// }
-
-// let mainTempC = document.querySelector(".tempC");
-// mainTempC.addEventListener("click", updateTempC);
+let mainTempC = document.querySelector(".tempC");
+mainTempC.addEventListener("click", updateTempC);
 
 function mouseDownF() {
   let element = document.querySelector(".tempF");
