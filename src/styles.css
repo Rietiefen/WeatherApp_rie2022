@@ -56,6 +56,11 @@ li {
 .cityname {
   font-size: 30px;
 }
+#mainTemp {
+  color: #545b63;
+  font-size: 20px;
+  font-weight: 700;
+}
 #icon {
   font-size: 40px;
   vertical-align: top;
