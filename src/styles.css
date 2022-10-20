@@ -61,8 +61,6 @@ li {
   vertical-align: top;
 }
 .main_weather {
-  padding-right: 15px;
-  padding-left: 15px;
   color: #545b63;
 }
 .high_low_precipitaion {
@@ -72,6 +70,7 @@ li {
 .temparature {
   font-size: 15px;
   vertical-align: middle;
+  padding-inline-start: 26px;
 }
 .weeklyweather {
   margin: 30px;
