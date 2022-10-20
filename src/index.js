@@ -32,28 +32,36 @@ function updateDate() {
 }
 updateDate();
 
-// // Feature #3
-// function mouseDownF() {
-//   document.getElementById("mainTemp").innerHTML = "90";
-//   let element = document.querySelector(".tempF");
-//   element.classList.add("mystyle");
-//   let element2 = document.querySelector(".tempC");
-//   element2.classList.remove("mystyle");
-// }
+//change Temparature from c to f
+function updateTempF(event) {
+  event.preventDefault();
+  let mainTemp = document.querySelector("#mainTemp").value;
+  let mainTempF = (mainTemp * 9) / 5 + 32;
+  // document.querySelector("#mainTemp").innerHTML = mainTempF;
+}
 
-// let tempF = document.querySelector(".tempF");
-// tempF.addEventListener("mousedown", mouseDownF);
+let mainTemp = document.querySelector(".tempF");
+mainTemp.addEventListener("click", updateTempF);
 
-// function mouseDownC() {
-//   document.getElementById("mainTemp").innerHTML = "32";
-//   let element = document.querySelector(".tempC");
-//   element.classList.add("mystyle");
-//   let element2 = document.querySelector(".tempF");
-//   element2.classList.remove("mystyle");
-// }
+function mouseDownF() {
+  let element = document.querySelector(".tempF");
+  element.classList.add("mystyle");
+  let element2 = document.querySelector(".tempC");
+  element2.classList.remove("mystyle");
+}
 
-// let tempC = document.querySelector(".tempC");
-// tempC.addEventListener("mousedown", mouseDownC);
+let tempF = document.querySelector(".tempF");
+tempF.addEventListener("mousedown", mouseDownF);
+
+function mouseDownC() {
+  let element = document.querySelector(".tempC");
+  element.classList.add("mystyle");
+  let element2 = document.querySelector(".tempF");
+  element2.classList.remove("mystyle");
+}
+
+let tempC = document.querySelector(".tempC");
+tempC.addEventListener("mousedown", mouseDownC);
 
 // update searched City data
 function updateCityElement(response) {
