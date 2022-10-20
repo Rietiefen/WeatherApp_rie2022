@@ -32,7 +32,7 @@ function updateDate() {
 }
 updateDate();
 
-//change Temparature from c to f
+// change Temparature from c to f
 function updateTempF(event) {
   event.preventDefault();
 
@@ -41,8 +41,18 @@ function updateTempF(event) {
   mainTemp.innerHTML = Math.round(mainTempF);
 }
 
-let mainTemp = document.querySelector(".tempF");
-mainTemp.addEventListener("click", updateTempF);
+let mainTempF = document.querySelector(".tempF");
+mainTempF.addEventListener("click", updateTempF);
+
+// function updateTempC(event) {
+//   event.preventDefault();
+
+//   let mainTemp = document.querySelector("#mainTemp");
+//   mainTemp.innerHTML = celsiusTemp;
+// }
+
+// let mainTempC = document.querySelector(".tempC");
+// mainTempC.addEventListener("click", updateTempC);
 
 function mouseDownF() {
   let element = document.querySelector(".tempF");
@@ -72,6 +82,7 @@ function updateCityElement(response) {
 
   celsiusTemp = response.data.main.temp;
   let tempRound = Math.round(celsiusTemp);
+
   let tempElement = document.getElementById("mainTemp");
   tempElement.innerHTML = `${tempRound}`;
 
