@@ -89,7 +89,12 @@ function updateCityElement(response) {
   tempMax.innerHTML = Math.round(response.data.main.temp_max);
   let tempMin = document.querySelector(".lowest_temp");
   tempMin.innerHTML = Math.round(response.data.main.temp_min);
-  document.querySelector(".cityname").innerHTML = response.data.name;
+  let icon = document.getElementById("icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function handleSubmit(event) {
@@ -112,6 +117,19 @@ function showCurrentTempPlace(response) {
   let mainTemp = document.getElementById("mainTemp");
   let currentTemp = Math.round(response.data.main.temp);
   mainTemp.innerHTML = currentTemp;
+  let wind = document.querySelector(".wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  let tempMax = document.querySelector(".highest_temp");
+  tempMax.innerHTML = Math.round(response.data.main.temp_max);
+  let tempMin = document.querySelector(".lowest_temp");
+  tempMin.innerHTML = Math.round(response.data.main.temp_min);
+  document.querySelector(".cityname").innerHTML = response.data.name;
+  let icon = document.getElementById("icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   console.log(response);
 }
 

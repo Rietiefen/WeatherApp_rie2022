@@ -56,7 +56,7 @@ li {
 .cityname {
   font-size: 30px;
 }
-.weather {
+#icon {
   font-size: 40px;
   vertical-align: top;
 }
