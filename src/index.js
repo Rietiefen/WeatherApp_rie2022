@@ -57,6 +57,10 @@ updateDate();
 
 // update searched City data
 function updateCityElement(response) {
+  let cityName = document.querySelector(".cityname");
+  let currentCityName = response.data.name;
+  cityName.innerHTML = currentCityName;
+
   let tempRound = Math.round(response.data.main.temp);
   let tempElement = document.getElementById("mainTemp");
   tempElement.innerHTML = `${tempRound}`;
@@ -71,7 +75,7 @@ function updateCityElement(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  // iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function handleSubmit(event) {
@@ -106,8 +110,8 @@ function showCurrentTempPlace(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response);
+  // iconElement.setAttribute("alt", response.data.weather[0].description);
+  // console.log(response);
 }
 
 function getCurrentPlace(position) {
