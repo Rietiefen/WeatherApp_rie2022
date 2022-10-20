@@ -35,9 +35,10 @@ updateDate();
 //change Temparature from c to f
 function updateTempF(event) {
   event.preventDefault();
-  let mainTemp = document.querySelector("#mainTemp").value;
-  let mainTempF = (mainTemp * 9) / 5 + 32;
-  // document.querySelector("#mainTemp").innerHTML = mainTempF;
+
+  let mainTemp = document.querySelector("#mainTemp");
+  let mainTempF = (celsiusTemp * 9) / 5 + 32;
+  mainTemp.innerHTML = Math.round(mainTempF);
 }
 
 let mainTemp = document.querySelector(".tempF");
@@ -69,9 +70,11 @@ function updateCityElement(response) {
   let currentCityName = response.data.name;
   cityName.innerHTML = currentCityName;
 
-  let tempRound = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  let tempRound = Math.round(celsiusTemp);
   let tempElement = document.getElementById("mainTemp");
   tempElement.innerHTML = `${tempRound}`;
+
   let wind = document.querySelector(".wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
   let tempMax = document.querySelector(".highest_temp");
@@ -97,6 +100,8 @@ function handleSubmit(event) {
 let cityName = document.querySelector(".form-inline");
 cityName.addEventListener("submit", handleSubmit);
 
+let celsiusTemp = null;
+
 // current place
 function showCurrentTempPlace(response) {
   let cityName = document.querySelector(".cityname");
@@ -106,6 +111,7 @@ function showCurrentTempPlace(response) {
   let mainTemp = document.getElementById("mainTemp");
   let currentTemp = Math.round(response.data.main.temp);
   mainTemp.innerHTML = currentTemp;
+
   let wind = document.querySelector(".wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
   let tempMax = document.querySelector(".highest_temp");
