@@ -1,5 +1,6 @@
 body {
   background-image: url("../image/bluesky.jpg");
+  background-size: cover;
 }
 ul {
   display: flex;
