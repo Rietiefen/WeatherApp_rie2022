@@ -152,3 +152,25 @@ function currentPlace() {
 
 let currentButton = document.getElementById("currentlocation");
 currentButton.addEventListener("click", currentPlace);
+
+function getBigcitiesData(event) {
+  event.preventDefault();
+  let cityName = event.target.innerHTML;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=10bffd0ee69586cf4e1b1e702883c72c&units=metric`;
+  axios.get(apiUrl).then(updateCityElement);
+}
+
+let tokyoWeather = document.querySelector(".tokyoWeather");
+tokyoWeather.addEventListener("click", getBigcitiesData);
+
+let singaporeWeather = document.querySelector(".singaporeWeather");
+singaporeWeather.addEventListener("click", getBigcitiesData);
+
+let nyWeather = document.querySelector(".nyWeather");
+nyWeather.addEventListener("click", getBigcitiesData);
+
+let parisWeather = document.querySelector(".parisWeather");
+parisWeather.addEventListener("click", getBigcitiesData);
+
+let londonWeather = document.querySelector(".londonWeather");
+londonWeather.addEventListener("click", getBigcitiesData);
