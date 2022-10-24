@@ -181,7 +181,6 @@ londonWeather.addEventListener("click", getBigcitiesData);
 // change background image depends on the weather
 function updateBackground() {
   let iconMain = document.querySelector("#icon");
-  console.log(iconMain.src.substring(33, 35));
   switch (iconMain.src.substring(33, 35)) {
     case "01":
     case "02":
