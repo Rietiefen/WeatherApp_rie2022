@@ -97,6 +97,8 @@ function updateCityElement(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  updateBackground();
+
   // iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -135,6 +137,7 @@ function showCurrentTempPlace(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  updateBackground();
   // iconElement.setAttribute("alt", response.data.weather[0].description);
   // console.log(response);
 }
@@ -176,33 +179,10 @@ let londonWeather = document.querySelector(".londonWeather");
 londonWeather.addEventListener("click", getBigcitiesData);
 
 // change background image depends on the weather
-
-// function changeBackgroundImage() {
-//   let iconMain = document.querySelector("#icon");
-//   console.log(iconMain);
-//   if (iconMain.src.includes("01" || "02")) {
-//     document.body.style.backgroundImage = "url('./image/sunny.jpg')";
-//   } else if (iconMain.src.includes("03" || "04")) {
-//     document.body.style.backgroundImage = "url('./image/mist.jpg')";
-//   } else if (iconMain.src.includes("13")) {
-//     document.body.style.backgroundImage = "url('./image/snow.jpg')";
-//   } else if (iconMain.src.includes("09" || "10")) {
-//     document.body.style.backgroundImage = "url('./image/raining.jpg')";
-//   } else if (iconMain.src.includes("11")) {
-//     document.body.style.backgroundImage = "url('./image/thunder.jpg')";
-//   } else {
-//     document.body.style.backgroundImage = "url('./image/bluesky.jpg')";
-//   }
-// }
-
-// let iconMain = document.querySelector("#icon");
-// iconMain.addEventListener("onpageshow", changeBackgroundImage);
-
-//try
 function updateBackground() {
   let iconMain = document.querySelector("#icon");
-
-  switch (iconMain.src.substring(34, 36)) {
+  console.log(iconMain.src.substring(33, 35));
+  switch (iconMain.src.substring(33, 35)) {
     case "01":
     case "02":
       document.body.style.backgroundImage = "url('./image/sunny.jpg')";
@@ -226,5 +206,5 @@ function updateBackground() {
   }
 }
 
-let iconMain = document.querySelector("#icon");
-iconMain.addEventListener("click", updateBackground);
+// let iconMain = document.querySelector("#icon");
+// iconMain.addEventListener("load", updateBackground);
