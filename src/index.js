@@ -174,3 +174,26 @@ parisWeather.addEventListener("click", getBigcitiesData);
 
 let londonWeather = document.querySelector(".londonWeather");
 londonWeather.addEventListener("click", getBigcitiesData);
+
+// change background image depends on the weather
+
+function changeBackgroundImage() {
+  let iconMain2 = document.querySelector("#icon");
+
+  if (iconMain2.src.includes("01" || "02")) {
+    document.body.style.backgroundImage = "url('./image/sunny.jpg')";
+  } else if (iconMain2.src.includes("03" || "04")) {
+    document.body.style.backgroundImage = "url('./image/mist.jpg')";
+  } else if (iconMain2.src.includes("13")) {
+    document.body.style.backgroundImage = "url('./image/snow.jpg')";
+  } else if (iconMain2.src.includes("09" || "10")) {
+    document.body.style.backgroundImage = "url('./image/raining.jpg')";
+  } else if (iconMain2.src.includes("11")) {
+    document.body.style.backgroundImage = "url('./image/thunder.jpg')";
+  } else {
+    document.body.style.backgroundImage = "url('./image/bluesky.jpg')";
+  }
+}
+
+let iconMain = document.querySelector("#icon");
+iconMain.addEventListener("load", changeBackgroundImage);
