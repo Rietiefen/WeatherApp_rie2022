@@ -177,23 +177,54 @@ londonWeather.addEventListener("click", getBigcitiesData);
 
 // change background image depends on the weather
 
-function changeBackgroundImage() {
-  let iconMain2 = document.querySelector("#icon");
+// function changeBackgroundImage() {
+//   let iconMain = document.querySelector("#icon");
+//   console.log(iconMain);
+//   if (iconMain.src.includes("01" || "02")) {
+//     document.body.style.backgroundImage = "url('./image/sunny.jpg')";
+//   } else if (iconMain.src.includes("03" || "04")) {
+//     document.body.style.backgroundImage = "url('./image/mist.jpg')";
+//   } else if (iconMain.src.includes("13")) {
+//     document.body.style.backgroundImage = "url('./image/snow.jpg')";
+//   } else if (iconMain.src.includes("09" || "10")) {
+//     document.body.style.backgroundImage = "url('./image/raining.jpg')";
+//   } else if (iconMain.src.includes("11")) {
+//     document.body.style.backgroundImage = "url('./image/thunder.jpg')";
+//   } else {
+//     document.body.style.backgroundImage = "url('./image/bluesky.jpg')";
+//   }
+// }
 
-  if (iconMain2.src.includes("01" || "02")) {
-    document.body.style.backgroundImage = "url('./image/sunny.jpg')";
-  } else if (iconMain2.src.includes("03" || "04")) {
-    document.body.style.backgroundImage = "url('./image/mist.jpg')";
-  } else if (iconMain2.src.includes("13")) {
-    document.body.style.backgroundImage = "url('./image/snow.jpg')";
-  } else if (iconMain2.src.includes("09" || "10")) {
-    document.body.style.backgroundImage = "url('./image/raining.jpg')";
-  } else if (iconMain2.src.includes("11")) {
-    document.body.style.backgroundImage = "url('./image/thunder.jpg')";
-  } else {
-    document.body.style.backgroundImage = "url('./image/bluesky.jpg')";
+// let iconMain = document.querySelector("#icon");
+// iconMain.addEventListener("onpageshow", changeBackgroundImage);
+
+//try
+function updateBackground() {
+  let iconMain = document.querySelector("#icon");
+
+  switch (iconMain.src.substring(34, 36)) {
+    case "01":
+    case "02":
+      document.body.style.backgroundImage = "url('./image/sunny.jpg')";
+      break;
+    case "03":
+    case "04":
+      document.body.style.backgroundImage = "url('./image/mist.jpg')";
+      break;
+    case "13":
+      document.body.style.backgroundImage = "url('./image/snow.jpg')";
+      break;
+    case "09":
+    case "10":
+      document.body.style.backgroundImage = "url('./image/raining.jpg')";
+      break;
+    case "11":
+      document.body.style.backgroundImage = "url('./image/thunder.jpg')";
+      break;
+    default:
+      document.body.style.backgroundImage = "url('./image/mist.jpg')";
   }
 }
 
 let iconMain = document.querySelector("#icon");
-iconMain.addEventListener("load", changeBackgroundImage);
+iconMain.addEventListener("click", updateBackground);
