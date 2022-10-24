@@ -205,6 +205,3 @@ function updateBackground() {
       document.body.style.backgroundImage = "url('./image/mist.jpg')";
   }
 }
-
-// let iconMain = document.querySelector("#icon");
-// iconMain.addEventListener("load", updateBackground);
