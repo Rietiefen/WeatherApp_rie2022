@@ -88,15 +88,19 @@ function updateCityElement(response) {
 
   let wind = document.querySelector(".wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+
   let tempMax = document.querySelector(".highest_temp");
   tempMax.innerHTML = Math.round(response.data.main.temp_max);
+
   let tempMin = document.querySelector(".lowest_temp");
   tempMin.innerHTML = Math.round(response.data.main.temp_min);
+
   let icon = document.getElementById("icon");
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  console.log(response.data);
   updateBackground();
 
   // iconElement.setAttribute("alt", response.data.weather[0].description);
@@ -127,11 +131,14 @@ function showCurrentTempPlace(response) {
 
   let wind = document.querySelector(".wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+
   let tempMax = document.querySelector(".highest_temp");
   tempMax.innerHTML = Math.round(response.data.main.temp_max);
+
   let tempMin = document.querySelector(".lowest_temp");
   tempMin.innerHTML = Math.round(response.data.main.temp_min);
   document.querySelector(".cityname").innerHTML = response.data.name;
+
   let icon = document.getElementById("icon");
   icon.setAttribute(
     "src",
@@ -183,10 +190,14 @@ function updateBackground() {
   let iconMain = document.querySelector("#icon");
   switch (iconMain.src.substring(33, 35)) {
     case "01":
+      document.body.style.backgroundImage = "url('./image/sunny2.jpg')";
+      break;
     case "02":
       document.body.style.backgroundImage = "url('./image/sunny.jpg')";
       break;
     case "03":
+      document.body.style.backgroundImage = "url('./image/hase.jpg')";
+      break;
     case "04":
       document.body.style.backgroundImage = "url('./image/mist.jpg')";
       break;
@@ -194,11 +205,16 @@ function updateBackground() {
       document.body.style.backgroundImage = "url('./image/snow.jpg')";
       break;
     case "09":
-    case "10":
       document.body.style.backgroundImage = "url('./image/raining.jpg')";
+      break;
+    case "10":
+      document.body.style.backgroundImage = "url('./image/raining2.jpg')";
       break;
     case "11":
       document.body.style.backgroundImage = "url('./image/thunder.jpg')";
+      break;
+    case "50":
+      document.body.style.backgroundImage = "url('./image/foggy.jpg')";
       break;
     default:
       document.body.style.backgroundImage = "url('./image/mist.jpg')";
