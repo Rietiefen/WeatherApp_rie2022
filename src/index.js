@@ -74,6 +74,14 @@ function mouseDownC() {
 let tempC = document.querySelector(".tempC");
 tempC.addEventListener("mousedown", mouseDownC);
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "6782253072f7d90462731a624097fc54";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // update searched City data
 function updateCityElement(response) {
   let cityName = document.querySelector(".cityname");
@@ -102,6 +110,8 @@ function updateCityElement(response) {
   );
   console.log(response.data);
   updateBackground();
+
+  getForecast(response.data.coord);
 
   // iconElement.setAttribute("alt", response.data.weather[0].description);
 }
@@ -221,9 +231,10 @@ function updateBackground() {
       document.body.style.backgroundImage = "url('./image/mist.jpg')";
   }
 }
-displayForecast();
+
 //weather forecast starts here
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.getElementById("forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
