@@ -32,6 +32,14 @@ function updateDate() {
 }
 updateDate();
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
+
 // change Temparature from c to f
 function updateTempF(event) {
   event.preventDefault();
@@ -234,23 +242,33 @@ function updateBackground() {
 
 //weather forecast starts here
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.getElementById("forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (days) {
-    forecastHTML =
-      forecastHTML +
-      `
+  // let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2 weeklyweather_frame">
-              ${days}
+              ${formatDay(forecastDay.dt)}
               <div class="row">
 
-                <div class="col-6 weeklydetails symbol">⛅️</div>
-                <div class="col-6 weeklydetails"><small>35℃<br />28℃</small></div>
+                <div class="col-6 weeklydetails symbol"><img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42" />
+        </div>
+                <div class="col-6 weeklydetails"><small>${Math.round(
+                  forecastDay.temp.max
+                )}℃<br />${Math.round(forecastDay.temp.min)}℃</small></div>
               </div>
             </div>
             `;
+    }
   });
 
   forecastHTML = forecastHTML + `<div />`;
