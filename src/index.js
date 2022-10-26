@@ -145,6 +145,7 @@ function showCurrentTempPlace(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   updateBackground();
+
   // iconElement.setAttribute("alt", response.data.weather[0].description);
   // console.log(response);
 }
@@ -219,4 +220,28 @@ function updateBackground() {
     default:
       document.body.style.backgroundImage = "url('./image/mist.jpg')";
   }
+}
+displayForecast();
+//weather forecast starts here
+function displayForecast() {
+  let forecastElement = document.getElementById("forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2 weeklyweather_frame">
+              ${days}
+              <div class="row">
+
+                <div class="col-6 weeklydetails symbol">⛅️</div>
+                <div class="col-6 weeklydetails"><small>35℃<br />28℃</small></div>
+              </div>
+            </div>
+            `;
+  });
+
+  forecastHTML = forecastHTML + `<div />`;
+  forecastElement.innerHTML = forecastHTML;
 }

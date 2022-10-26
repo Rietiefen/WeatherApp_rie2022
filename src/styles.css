@@ -1,6 +1,7 @@
 body {
   background-image: url("../image/mist.jpg");
   background-size: cover;
+  margin-top: 15px;
 }
 ul {
   display: flex;
@@ -25,6 +26,9 @@ li {
 .searchBar {
   display: flex;
   flex-direction: row;
+}
+.col-5 {
+  max-width: 100%;
 }
 #currentlocation {
   background-color: #24a9e2;
@@ -94,7 +98,7 @@ li {
 .weeklyweather_frame {
   color: #545b63;
   padding: 0.5em 2em;
-  margin: 0em 0;
+  margin: 1em 0;
   font-weight: bold;
   background: #fff;
   border: solid 1px #bbe4e9;

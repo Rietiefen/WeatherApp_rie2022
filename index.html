@@ -8,58 +8,73 @@
       crossorigin="anonymous"
     />
     <script
-    src="https://kit.fontawesome.com/af2da30c34.js"
-    crossorigin="anonymous"
-  ></script>
-  
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      src="https://kit.fontawesome.com/af2da30c34.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
- <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
 
   <body>
     <div class="borderline">
       <div class="container">
         <div class="row">
-            <div class="col-12">
-              <div class="searchBar">
-        <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2 enteracity">
-            <input
-              type="text"
-              class="form-control"
-              id="inputacity"
-              placeholder="enter a city"
-            />
+          <div class="col-12">
+            <div class="searchBar">
+              <form class="form-inline">
+                <div class="form-group mx-sm-3 mb-2 enteracity">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputacity"
+                    placeholder="enter a city"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 submitbutton">
+                  🔍
+                </button>
+              </form>
+              <button id="currentlocation">　Current　</button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary mb-2 submitbutton">
-              🔍
-          </button>
-        </form>
-        <button id="currentlocation">　Current　</button>
-        </div></div></div>
+        </div>
         <div class="row">
           <div class="col-4 main_city">
             <span class="cityname">Tokyo, Japan</span>
-            <div class="col-5 dow_time cityDate">Monday</div>
+            <div class="col-5 dow_time lastUpdated">
+              Last Updated: <span class="cityDate">Monday</span>
+            </div>
             <div class="col-5 dow_time cityTime">13:30</div>
           </div>
 
           <div class="col-3 main_weather">
-             <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="0" id="icon" />
-              <div class="temparature"><span id="mainTemp">32</span> <span class="tempC">℃</span> | <span class="tempF">°F</span></div>
+            <img
+              src="https://openweathermap.org/img/wn/01d@2x.png"
+              alt="0"
+              id="icon"
+            />
+            <div class="temparature">
+              <span id="mainTemp">32</span> <span class="tempC">℃</span> |
+              <span class="tempF">°F</span>
+            </div>
           </div>
           <div class="col-3 high_low_precipitaion">
-             <div><span class="red">↑</span> : <span class="highest_temp">33</span>℃</div>
-              <div><span class="blue">↓</span>  : <span class="lowest_temp">24</span>℃</div>
-              <div>🌬 : <span class="wind">15</span> km/h</div>
+            <div>
+              <span class="red">↑</span> : <span class="highest_temp">33</span>℃
+            </div>
+            <div>
+              <span class="blue">↓</span> : <span class="lowest_temp">24</span>℃
+            </div>
+            <div>🌬 : <span class="wind">15</span> km/h</div>
           </div>
-
-        
         </div>
 
-        <section class="weeklyweather">
+        <div class="weatherForecast" id="forecast">hier</div>
+        <!-- <section class="weeklyweather">
+            
           <div class="row">
             <div class="col-2 weeklyweather_frame">
               Tue
@@ -112,44 +127,64 @@
             </div>
           </span>
         </div>  
-        
+         -->
         <div class="row bigCities">
-            <ul>
-              
+          <ul>
             <li class="list1">
-              <a href="https://onl.sc/zQz62dT" class="tokyoWeather" target="_blank">Tokyo</a>
+              <a
+                href="https://onl.sc/zQz62dT"
+                class="tokyoWeather"
+                target="_blank"
+                >Tokyo</a
+              >
             </li>
-          
+
             <li class="list2">
-              <a href="https://onl.sc/719FB4C" class="singaporeWeather" target="_blank">Singapore</a>
+              <a
+                href="https://onl.sc/719FB4C"
+                class="singaporeWeather"
+                target="_blank"
+                >Singapore</a
+              >
             </li>
-          
+
             <li class="list4">
-              <a href="https://onl.sc/fP4LzjZ" class="nyWeather" target="_blank">New York</a>
+              <a href="https://onl.sc/fP4LzjZ" class="nyWeather" target="_blank"
+                >New York</a
+              >
             </li>
-          
+
             <li class="list5">
-              <a href="https://onl.sc/rXe8hK9" class="parisWeather" target="_blank">Paris</a>
+              <a
+                href="https://onl.sc/rXe8hK9"
+                class="parisWeather"
+                target="_blank"
+                >Paris</a
+              >
             </li>
-            
+
             <li class="list6">
-              <a href="https://onl.sc/ZndibPC" class="londonWeather" target="_blank">London</a>
+              <a
+                href="https://onl.sc/ZndibPC"
+                class="londonWeather"
+                target="_blank"
+                >London</a
+              >
             </li>
           </ul>
         </div>
-        
       </div>
     </div>
-   <div class="footer">
-        <small id="repository">
-          <a
-            href="https://github.com/Rietiefen/WeatherApp_rie2022"
-            target="_blank"
-            >Open-source code
-            </a>
-          <span>by Rie Tiefenbach</span>
-        </small>
-      </div>
+    <div class="footer">
+      <small id="repository">
+        <a
+          href="https://github.com/Rietiefen/WeatherApp_rie2022"
+          target="_blank"
+          >Open-source code
+        </a>
+        <span>by Rie Tiefenbach</span>
+      </small>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
