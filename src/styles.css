@@ -100,7 +100,7 @@ li {
   padding: 0.5em 2em;
   margin: 1em 0;
   font-weight: bold;
-  background: #fff;
+  background: rgba(254, 254, 254, 0.5);
   border: solid 1px #bbe4e9;
   border-radius: 10px;
 }

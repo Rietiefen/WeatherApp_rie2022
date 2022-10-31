@@ -230,9 +230,9 @@ function displayForecast(response) {
           alt=""
           width="42" />
         </div>
-                <div class="col-6 weeklydetails"><small>${Math.round(
+                <div class="col-6 weeklydetails"><small><b>${Math.round(
                   forecastDay.temp.max
-                )}℃<br />${Math.round(forecastDay.temp.min)}℃</small></div>
+                )}℃</b><br />${Math.round(forecastDay.temp.min)}℃</small></div>
               </div>
             </div>
             `;
