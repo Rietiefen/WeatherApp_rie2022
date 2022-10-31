@@ -40,48 +40,6 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-// change Temparature from c to f
-function updateTempF(event) {
-  event.preventDefault();
-
-  let mainTemp = document.querySelector("#mainTemp");
-  let mainTempF = (celsiusTemp * 9) / 5 + 32;
-  mainTemp.innerHTML = Math.round(mainTempF);
-}
-
-function updateTempC(event) {
-  event.preventDefault();
-
-  let mainTemp = document.querySelector("#mainTemp");
-  mainTemp.innerHTML = Math.round(celsiusTemp);
-}
-
-let mainTempF = document.querySelector(".tempF");
-mainTempF.addEventListener("click", updateTempF);
-
-let mainTempC = document.querySelector(".tempC");
-mainTempC.addEventListener("click", updateTempC);
-
-function mouseDownF() {
-  let element = document.querySelector(".tempF");
-  element.classList.add("mystyle");
-  let element2 = document.querySelector(".tempC");
-  element2.classList.remove("mystyle");
-}
-
-let tempF = document.querySelector(".tempF");
-tempF.addEventListener("mousedown", mouseDownF);
-
-function mouseDownC() {
-  let element = document.querySelector(".tempC");
-  element.classList.add("mystyle");
-  let element2 = document.querySelector(".tempF");
-  element2.classList.remove("mystyle");
-}
-
-let tempC = document.querySelector(".tempC");
-tempC.addEventListener("mousedown", mouseDownC);
-
 function getForecast(coordinates) {
   let apiKey = "6782253072f7d90462731a624097fc54";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
