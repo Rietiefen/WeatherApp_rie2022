@@ -83,12 +83,20 @@ let tempC = document.querySelector(".tempC");
 tempC.addEventListener("mousedown", mouseDownC);
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "6782253072f7d90462731a624097fc54";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
+
+function getForecastTokyo() {
+  let apiKey = "6782253072f7d90462731a624097fc54";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=35.652832&lon=139.839478&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
+getForecastTokyo();
 
 // update searched City data
 function updateCityElement(response) {
@@ -163,6 +171,8 @@ function showCurrentTempPlace(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   updateBackground();
+
+  getForecast(response.data.coord);
 
   // iconElement.setAttribute("alt", response.data.weather[0].description);
   // console.log(response);
