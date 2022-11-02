@@ -47,6 +47,7 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+//Update Top Page data (Tokyo)
 function getForecastTokyo() {
   let apiKey = "6782253072f7d90462731a624097fc54";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=35.652832&lon=139.839478&appid=${apiKey}&units=metric`;
@@ -54,7 +55,13 @@ function getForecastTokyo() {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function getTokyoData() {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=10bffd0ee69586cf4e1b1e702883c72c&units=metric`;
+  axios.get(apiUrl).then(updateCityElement);
+}
+
 getForecastTokyo();
+getTokyoData();
 
 // update searched City data
 function updateCityElement(response) {
